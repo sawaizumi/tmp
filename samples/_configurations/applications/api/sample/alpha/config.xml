@@ -1,0 +1,44 @@
+﻿<?xml version = "1.0" encoding = "utf-8" ?>
+<root>
+	<Log>
+<!--
+		<Output LogType = "_Common" >true</Output>
+		<Output LogType = "Debug" >true</Output>
+		<Output LogType = "Notice" >true</Output>
+-->
+	</Log>
+	<Languages Default = "ja" >
+		<Language LanguageID = "en" Name = "English" File = "config-language-en.xml" />
+		<Language LanguageID = "ja" Name = "Japanese" File = "config-language-ja.xml" />
+	</Languages>
+	<Mail>
+		<Success>
+			<Subject>__APPLICATION_NAME__ - __TARGET_DATE__</Subject>
+			<From>
+				<Address>__APPLICATION__EMAIL_ADDRESS__DEFAULT__</Address>
+			</From>
+			<ReplyTo>
+				<Address>sample@template.simpl</Address>
+			</ReplyTo>
+			<Body>
+			</Body>
+		</Success>
+		<Error>
+			<Subject>__APPLICATION_NAME__ - Error __TARGET_DATE__</Subject>
+			<From>
+				<Address>__APPLICATION__EMAIL_ADDRESS__ERROR__</Address>
+			</From>
+			<ReplyTo>
+				<Address>sample@template.simpl</Address>
+			</ReplyTo>
+			<To>
+				<Address>sample@template.simpl</Address>
+			</To>
+			<Cc>
+				<Address disable = "disable" >sample@template.simpl</Address>
+			</Cc>
+			<Bcc>
+			</Bcc>
+		</Error>
+	</Mail>
+</root>

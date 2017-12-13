@@ -1,0 +1,75 @@
+// ===================================================================
+// Subject : SAWA, Izumi's Multi Perpose Library (Tests)
+// Author  : SAWA, Izumi
+// Version : 1.00.000
+// ===================================================================
+// 日本語UTF-8, LF
+
+
+
+●概要
+　　各種テストスイートを導入するほどでもない簡単なテストの記述を支援す
+　　るためのライブラリ群。
+　　SIMPL自体のテストもこのライブラリで行っている。
+
+
+
+●簡単な使用方法
+　　以下のソースを参照。
+
+/simpl/samples/tests/
+	main-test-_sample.php : テスト実行用
+	test-_sample.php : テストケース作成用
+
+
+　　このサンプルは以下のコマンドで実行できる。
+
+php [SIMPLのパス]/samples/tests/main-test-_sample.php [SIMPLのパス]/include-master/include-simpl.phps [SIMPLのパス]/include-master/test/include-simpl-test.phps
+
+
+
+●テストケース作成方法
+　　1.以下のクラスを継承してテスト用クラスの枠組みを作成する
+　　　その際にクラス名とファイル名の紐付けルールを決めておく
+
+SIMPL__TEST__UnitTestCase
+
+
+　　2.Test__*というメソッド名がテストケースとして認識されるので以下の
+　　　ようにそのメソッドの中でテストを記述する
+
+class Test___Sample extends SIMPL__TEST__UnitTestCase
+{
+	function Test__Sample01()
+	{
+		...
+		// テストを記述
+	}
+	...
+	function Test__SampleXX()
+	{
+		...
+	}
+}
+
+
+　　3.テストパターンは継承元クラスで用意されているものを以下のように必
+　　　要に応じて呼び出して使用する
+
+// 文字列一致比較の例
+$this->CheckEqual_String( SampleFunction(), "SampleFunctionの結果と比較するべき値", "エラー時のメッセージ(基本的に不要)" );
+
+
+　　4.テストの事前事後の処理は必要に応じて以下のメソッドをオーバーライ
+　　　ドして使用する
+　　　テストケース毎に異なる処理をしたい場合はメソッド内で現在のテスト
+　　　ケース(テスト用メソッド)名を取得できるのでそれを利用して分岐する
+
+// 事前処理
+function Setup()
+
+// 事後処理
+function Teardown()
+
+
+

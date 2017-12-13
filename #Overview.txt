@@ -1,0 +1,80 @@
+// ===================================================================
+// Subject : SAWA, Izumi's Multi Perpose Library
+// Author  : SAWA, Izumi
+// Version : 1.00.000
+// ===================================================================
+// 日本語UTF-8, LF
+
+
+
+●概要
+　　他のライブラリ等に可能な限り依存せずに必要な範囲のみを選択的に利用
+　　できる事を目指したライブラリ群。
+　　また、様々な外部機能をラップ関数を使用して共通のインターフェイスで
+　　利用できるようにする事も目指す。
+　　どの言語でも基本的に同じ機能を同様に利用できる事に主眼を置いている
+　　ため、言語によってはより高機能な仕組みが既に存在する可能性は高い。
+　　全ての基本となる共有部分は存在するが、それぞれの機能が独立したサブ
+　　システムとして構成されるような設計となっている。
+　　また、オールインワンで簡単に利用できるような仕組みも用意されている。
+
+
+
+●簡単な使用方法
+　　Javascript
+　　　　以下のソースを参照。
+　　　　(include-master/js/内の必要なファイルを全て設定する必要がある)
+
+/simpl/samples/
+	main-simple_use.html
+
+
+　　PHP
+　　　　以下のソースを参照。
+　　　　(include-master/php/内のinclude-simpl.phpsをincludeかrequireするだけ)
+
+/simpl/samples/
+	main-simple_use.php
+
+
+
+●様々なアプリケーションからの利用
+　　ライブラリは常に更新され続けているのでアプリケーションを作成した時
+　　点のライブラリと最新版では異なる動作になり動かなくなるケースは往々
+　　にして起こりうる。
+　　アプリケーションのメンテナンスを容易にするために以下のようなフォル
+　　ダ構成をした方がよいのではないかと現時点では考えている。
+
+/projects/ : 各アプリケーションプロジェクトのベースディレクトリ
+	application-_now/ : 現在開発中のアプリケーション
+		main.php : include "/projects/simpl/include-master/simpl.phps"と記述
+	application-01/ : アプリケーション01
+		main.php : include "/projects/simpl/include-r0001/simpl.phps"と記述
+	application-02/ : アプリケーション02
+		main.php : include "/projects/simpl/include-r0002/simpl.phps"と記述
+	...
+	application-xxxx/ : アプリケーションxxxx
+		main.php : include "/projects/simpl/include-rxxxx/simpl.phps"と記述
+	simpl/ : このライブラリのベースディレクトリ
+		include-master/ : 最新版
+		include-r0001/ : application-01を完成させた時点でのinclude-masterのコピー
+		include-r0002/ : application-02を完成させた時点でのinclude-masterのコピー
+		...
+		include-rxxxx/ : application-xxxxを完成させた時点でのinclude-masterのコピー
+
+
+・アプリケーションxxxxを更新(改修)する場合
+　　1.main.phpのinclude対象ディレクトリをinclude-masterに変更してまず
+　　　動作確認
+　　2.動作に問題がある場合、過去ライブラリを参照しないとどうにもならな
+　　　い状態ならばinclude-masterにinclude-rxxxxから部分的にコピーして
+　　　テスト
+　　3.問題なく動作するようになったら改修を開始し、可能な範囲で過去ライ
+　　　ブラリに戻したファイルを最新版にしても動作するように修正
+　　4.完成したらその時点のinclude-masterをinclude-ryyyyにコピーして、
+　　　main.phpのinclude対象ディレクトリをinclude-ryyyyに変更
+　　5.include-masterを最新版に戻す
+　　6.include-rxxxxがその時点でどこからも参照されなくなっていたら削除
+
+
+

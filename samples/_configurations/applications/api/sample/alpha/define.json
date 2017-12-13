@@ -1,0 +1,77 @@
+{
+	"Encoding": "日本語UTF-8, LF", 
+	"Comment": "multi platform common defines by JSON", 
+	"cccccccc00": "format - ", 
+	"cccccccc01": "	define_group_name: ", 
+	"cccccccc02": "		[ ", 
+	"cccccccc03": "			{ ", 
+	"cccccccc04": "				define_type: ", 
+	"cccccccc05": "					[ define_name, define_data ] | [ defines, options ]", 
+	"cccccccc06": "			} ", 
+	"cccccccc07": "		] ", 
+	"cccccccc08": "======================================================================", 
+	"Example": 
+		[
+			{ "Comment": "----------------------------------------------------------------------" }, 
+			{ "Integer": [ "SIMPL__INTEGER__SAMPLE_ID", 0 ] }, 
+			{ "Real": [ "SIMPL__REAL__SAMPLE_ID", 1.2 ] }, 
+			{ "String": [ "SIMPL__STRING__SAMPLE_Name", "Sample" ] }, 
+			{ "Boolean": [ "SIMPL__BOOL__SAMPLE_FLAG", false ] }, 
+			{ "commenT": "----------------------------------------------------------------------" }, 
+			{ 
+				"EnumString": 
+					[ 
+						[ 
+							[ "_DEFAULT", "Defalut", 0 ], 
+							"01", 
+							[ "02" ], 
+							[ "03", "03" ], 
+							"...", 
+							[ "SKIP", "Skip", 100 ], 
+							[ "END", "End" ] 
+						], 
+						{ 
+							"Label": "", 
+							"Category": "", 
+							"Offset": 0, 
+							"Prefix": "", 
+						} 
+					] 
+			}, 
+			{ "COMMENT": "----------------------------------------------------------------------" }, 
+			{ 
+				"Enum": 
+					[ 
+						[ 
+							[ "_DEFAULT", 0 ], 
+							"01", 
+							[ "02" ], 
+							"...", 
+							[ "SKIP", 100 ], 
+							"END" 
+						], 
+						{ 
+							"Label": "", 
+							"Category": "", 
+							"Offset": 0, 
+							"Prefix": "", 
+						} 
+					] 
+			}, 
+			{ "comment": "----------------------------------------------------------------------" }, 
+			{ 
+				"Auto": 
+					[ 
+						[ 
+							[ "SAMPLE_ID", 0 ], 
+							[ "SAMPLE_NAME", "Sample" ], 
+						], 
+						{ 
+							"Label": "", 
+							"Category": "", 
+							"Prefix": "", 
+						} 
+					] 
+			} 
+		]
+}

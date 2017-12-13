@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<Databases>
+		<Default>
+			<Default>
+				<Database disable = "disable" ServerType = "MySQL" ConnectionType = "PDO" DatabaseUser = "SIMPL-u__test__read" DatabasePassword = "SIMPL-p__test__read" Usage = "Read" >mysql:host=localhost;dbname=SIMPL-d__test;charset=utf8</Database>
+				<Database disable = "disable" ServerType = "MySQL" ConnectionType = "PDO" DatabaseUser = "SIMPL-u__test__write" DatabasePassword = "SIMPL-p__test__write" Usage = "Write" >mysql:host=localhost;dbname=SIMPL-d__test;charset=utf8</Database>
+				<Database ServerType = "MySQL" ConnectionType = "PDO" DatabaseUser = "SIMPL-u__sample__read" DatabasePassword = "SIMPL-p__sample__read" Usage = "Read" >mysql:host=localhost;dbname=SIMPL-d__sample;charset=utf8</Database>
+				<Database ServerType = "MySQL" ConnectionType = "PDO" DatabaseUser = "SIMPL-u__sample__write" DatabasePassword = "SIMPL-p__sample__write" Usage = "Write" >mysql:host=localhost;dbname=SIMPL-d__sample;charset=utf8</Database>
+			</Default>
+		</Default>
+		<Sample>
+			<Default>
+				<Database ServerID = "1" Name = "Default" ServerType = "MySQL" ConnectionType = "PDO" DatabaseUser = "SIMPL-u__sample__read" DatabasePassword = "SIMPL-p__sample__read" Usage = "Read" >mysql:host=localhost;dbname=SIMPL-d__sample;charset=utf8</Database>
+				<Database ServerID = "1" Name = "Default" ServerType = "MySQL" ConnectionType = "PDO" DatabaseUser = "SIMPL-u__sample__write" DatabasePassword = "SIMPL-p__sample__write" Usage = "Write" >mysql:host=localhost;dbname=SIMPL-d__sample;charset=utf8</Database>
+			</Default>
+			<Sample>
+				<Database ServerID = "2" Name = "Main" ServerType = "MySQL" ConnectionType = "FullConnectionString" Usage = "Read" >Server="localhost";User ID="SIMPL-u__sample__read";Password="SIMPL-p__sample__read";Database="SIMPL-d__sample";Connection Timeout=500;</Database>
+				<Database ServerID = "2" Name = "Main" ServerType = "MySQL" ConnectionType = "FullConnectionString" Usage = "Write" >Server="localhost";User ID="SIMPL-u__sample__write";Password="SIMPL-p__sample__write";Database="SIMPL-d__sample";Connection Timeout=500;</Database>
+			</Sample>
+		</Sample>
+	</Databases>
+</root>
